@@ -1,6 +1,9 @@
 
 @extends('layouts.app')
 
+
+
+
 @section('content')
         <div class="container">
             <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarNav"
