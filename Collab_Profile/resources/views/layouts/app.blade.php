@@ -44,11 +44,11 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/richtext.min.css">
         <script src="/js/jquery.richtext.min.js"></script>
+        
     
         <title>Collab</title>
     </head>
 <body>
-    
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
