@@ -32,7 +32,7 @@
     margin: 10px;
     resize: none;
     border-radius: 3px;
-    border: 1px solid lightgray;
+    border: 1px solid black;
     padding: 6px;
 }
 </style>

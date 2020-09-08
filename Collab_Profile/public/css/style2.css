@@ -61,9 +61,14 @@
     .registerFormContainer__block__holdBlock--submit {
       background: #32c766;
       border: 1px solid #32c766;
-      color: white; }
+      color: white;
+      padding:5px;
+      border-radius: 5px;
+    }
     .registerFormContainer__block__holdBlock--submit:hover {
-      background: #fff; }
+      background: #fff;
+      color: black;
+    }
 
 .loginCover__left {
   margin-top: 15rem; }
@@ -72,7 +77,19 @@
   .loginCover__left__block p {
     color: #738f93;
     font-size: 20px; }
-
+  .btnLogin{
+    color:#000 !important;
+    border: 1px solid black;
+  }
+  .btnLogin:hover{
+    background-color: #32c766;
+    color: white !important;
+    border: 1px solid #32c766;
+  }
+  .loginForgot:link, .loginForgot:visited, .loginForgot:hover, .loginForgot:link:active{
+    color: #32c766 !important;
+    text-decoration: none;
+  }
 @media (max-width: 768px) {
   .loginCover__left {
     margin-top: 10rem; }
@@ -262,7 +279,12 @@
     padding-right: 0rem; }
   .projects__each__info h5 {
     margin-top: 1rem; } }
+.profileInterests ::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
 .profileInterests {
+  
   background-color: white;
   padding: 1.5rem; }
   .profileInterests__edit {

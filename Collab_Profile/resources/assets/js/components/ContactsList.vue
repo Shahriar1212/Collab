@@ -16,6 +16,10 @@
 </template>
 
 <script>
+    // $( document ).ready(function() {
+    //     $(".contacts-list").css("height", $(window).height());
+    // });
+    
 
     export default {
         props: {
@@ -49,13 +53,18 @@
             }
         }
     }
+    
 </script>
 
 <style lang="scss" scoped>
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 .contacts-list {
     flex: 2;
     max-height: 100%;
-    height: 600px;
+    height: 100%;
     overflow: scroll;
     border-left: 1px solid #a6a6a6;
     
@@ -66,8 +75,8 @@
         li {
             display: flex;
             padding: 2px;
-            border-bottom: 1px solid #aaaaaa;
-            height: 80px;
+            // border-bottom: 1px solid #aaaaaa;
+            height: 60px;
             position: relative;
             cursor: pointer;
 
@@ -99,7 +108,9 @@
 
                 img {
                     width: 35px;
+                    height: 35px;
                     border-radius: 50%;
+                    object-fit: cover;
                     margin: 0 auto;
                 }
             }
@@ -117,6 +128,7 @@
 
                     &.name {
                         font-weight: bold;
+                        font-size: 15px;
                     }
                 }
             }

@@ -1,11 +1,14 @@
 <template>
     <div class="chat-app">
-        <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
         <ContactsList :contacts="contacts" @selected="startConversationWith"/>
+        <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
     </div>
 </template>
 
 <script>
+    $( document ).ready(function() {
+        $(".chat-app").css("height", $(window).height()-73);
+    });
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';
 

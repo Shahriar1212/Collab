@@ -40,8 +40,12 @@
 </script>
 
 <style lang="scss" scoped>
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 .feed {
-    background: #f0f0f0;
+    background: #F8F9FA;
     height: 100%;
     max-height: 470px;
     overflow: scroll;
@@ -57,8 +61,10 @@
 
                 .text {
                     max-width: 200px;
-                    border-radius: 5px;
-                    padding: 12px;
+                    border-radius: 15px;
+                    padding: 10px;
+                    padding-top: 7px;
+                    padding-bottom: 8px;
                     display: inline-block;
                 }
 
@@ -66,7 +72,9 @@
                     text-align: right;
 
                     .text {
-                        background: #b2b2b2;
+                        background: #738F93;
+                        color:white;
+                        font-size:13px;
                     }
                 }
 
@@ -74,7 +82,9 @@
                     text-align: left;
 
                     .text {
-                        background: #81c4f9;
+                        background: #32C766;
+                        color: white;
+                        font-size:13px;
                     }
                 }
             }

@@ -1917,6 +1917,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+$(document).ready(function () {
+  $(".chat-app").css("height", $(window).height() - 73);
+});
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2009,6 +2012,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+// $( document ).ready(function() {
+//     $(".contacts-list").css("height", $(window).height());
+// });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contacts: {
@@ -6640,7 +6646,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".contacts-list[data-v-76ff04c8] {\n  flex: 2;\n  max-height: 100%;\n  height: 600px;\n  overflow: scroll;\n  border-left: 1px solid #a6a6a6;\n}\n.contacts-list ul[data-v-76ff04c8] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.contacts-list ul li[data-v-76ff04c8] {\n  display: flex;\n  padding: 2px;\n  border-bottom: 1px solid #aaaaaa;\n  height: 80px;\n  position: relative;\n  cursor: pointer;\n}\n.contacts-list ul li.selected[data-v-76ff04c8] {\n  background: #dfdfdf;\n}\n.contacts-list ul li span.unread[data-v-76ff04c8] {\n  background: #82e0a8;\n  color: #fff;\n  position: absolute;\n  right: 11px;\n  top: 20px;\n  display: flex;\n  font-weight: 700;\n  min-width: 20px;\n  justify-content: center;\n  align-items: center;\n  line-height: 20px;\n  font-size: 12px;\n  padding: 0 4px;\n  border-radius: 3px;\n}\n.contacts-list ul li .avatar[data-v-76ff04c8] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n}\n.contacts-list ul li .avatar img[data-v-76ff04c8] {\n  width: 35px;\n  border-radius: 50%;\n  margin: 0 auto;\n}\n.contacts-list ul li .contact[data-v-76ff04c8] {\n  flex: 3;\n  font-size: 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.contacts-list ul li .contact p[data-v-76ff04c8] {\n  margin: 0;\n}\n.contacts-list ul li .contact p.name[data-v-76ff04c8] {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, "[data-v-76ff04c8]::-webkit-scrollbar {\n  width: 0px;\n  /* Remove scrollbar space */\n  background: transparent;\n  /* Optional: just make scrollbar invisible */\n}\n.contacts-list[data-v-76ff04c8] {\n  flex: 2;\n  max-height: 100%;\n  height: 100%;\n  overflow: scroll;\n  border-left: 1px solid #a6a6a6;\n}\n.contacts-list ul[data-v-76ff04c8] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.contacts-list ul li[data-v-76ff04c8] {\n  display: flex;\n  padding: 2px;\n  height: 60px;\n  position: relative;\n  cursor: pointer;\n}\n.contacts-list ul li.selected[data-v-76ff04c8] {\n  background: #dfdfdf;\n}\n.contacts-list ul li span.unread[data-v-76ff04c8] {\n  background: #82e0a8;\n  color: #fff;\n  position: absolute;\n  right: 11px;\n  top: 20px;\n  display: flex;\n  font-weight: 700;\n  min-width: 20px;\n  justify-content: center;\n  align-items: center;\n  line-height: 20px;\n  font-size: 12px;\n  padding: 0 4px;\n  border-radius: 3px;\n}\n.contacts-list ul li .avatar[data-v-76ff04c8] {\n  flex: 1;\n  display: flex;\n  align-items: center;\n}\n.contacts-list ul li .avatar img[data-v-76ff04c8] {\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  margin: 0 auto;\n}\n.contacts-list ul li .contact[data-v-76ff04c8] {\n  flex: 3;\n  font-size: 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.contacts-list ul li .contact p[data-v-76ff04c8] {\n  margin: 0;\n}\n.contacts-list ul li .contact p.name[data-v-76ff04c8] {\n  font-weight: bold;\n  font-size: 15px;\n}", ""]);
 
 // exports
 
@@ -6659,7 +6665,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".conversation[data-v-01c0168c] {\n  flex: 5;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.conversation h1[data-v-01c0168c] {\n  font-size: 20px;\n  padding: 10px;\n  margin: 0;\n  border-bottom: 1px dashed lightgray;\n}", ""]);
+exports.push([module.i, ".conversation[data-v-01c0168c] {\n  flex: 5;\n  display: flex;\n  height: 100%;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.conversation h1[data-v-01c0168c] {\n  font-size: 20px;\n  padding: 10px;\n  margin: 0;\n  border-bottom: 1px solid black;\n}", ""]);
 
 // exports
 
@@ -6678,7 +6684,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".composer textarea[data-v-6cfdbde0] {\n  width: 96%;\n  margin: 10px;\n  resize: none;\n  border-radius: 3px;\n  border: 1px solid lightgray;\n  padding: 6px;\n}", ""]);
+exports.push([module.i, ".composer textarea[data-v-6cfdbde0] {\n  width: 96%;\n  margin: 10px;\n  resize: none;\n  border-radius: 3px;\n  border: 1px solid black;\n  padding: 6px;\n}", ""]);
 
 // exports
 
@@ -6697,7 +6703,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".feed[data-v-32dd5c7e] {\n  background: #f0f0f0;\n  height: 100%;\n  max-height: 470px;\n  overflow: scroll;\n}\n.feed ul[data-v-32dd5c7e] {\n  list-style-type: none;\n  padding: 5px;\n}\n.feed ul li.message[data-v-32dd5c7e] {\n  margin: 10px 0;\n  width: 100%;\n}\n.feed ul li.message .text[data-v-32dd5c7e] {\n  max-width: 200px;\n  border-radius: 5px;\n  padding: 12px;\n  display: inline-block;\n}\n.feed ul li.message.received[data-v-32dd5c7e] {\n  text-align: right;\n}\n.feed ul li.message.received .text[data-v-32dd5c7e] {\n  background: #b2b2b2;\n}\n.feed ul li.message.sent[data-v-32dd5c7e] {\n  text-align: left;\n}\n.feed ul li.message.sent .text[data-v-32dd5c7e] {\n  background: #81c4f9;\n}", ""]);
+exports.push([module.i, "[data-v-32dd5c7e]::-webkit-scrollbar {\n  width: 0px;\n  /* Remove scrollbar space */\n  background: transparent;\n  /* Optional: just make scrollbar invisible */\n}\n.feed[data-v-32dd5c7e] {\n  background: #F8F9FA;\n  height: 100%;\n  max-height: 470px;\n  overflow: scroll;\n}\n.feed ul[data-v-32dd5c7e] {\n  list-style-type: none;\n  padding: 5px;\n}\n.feed ul li.message[data-v-32dd5c7e] {\n  margin: 10px 0;\n  width: 100%;\n}\n.feed ul li.message .text[data-v-32dd5c7e] {\n  max-width: 200px;\n  border-radius: 15px;\n  padding: 10px;\n  padding-top: 7px;\n  padding-bottom: 8px;\n  display: inline-block;\n}\n.feed ul li.message.received[data-v-32dd5c7e] {\n  text-align: right;\n}\n.feed ul li.message.received .text[data-v-32dd5c7e] {\n  background: #738F93;\n  color: white;\n  font-size: 13px;\n}\n.feed ul li.message.sent[data-v-32dd5c7e] {\n  text-align: left;\n}\n.feed ul li.message.sent .text[data-v-32dd5c7e] {\n  background: #32C766;\n  color: white;\n  font-size: 13px;\n}", ""]);
 
 // exports
 
@@ -44684,14 +44690,14 @@ var render = function() {
     "div",
     { staticClass: "chat-app" },
     [
-      _c("Conversation", {
-        attrs: { contact: _vm.selectedContact, messages: _vm.messages },
-        on: { new: _vm.saveNewMessage }
-      }),
-      _vm._v(" "),
       _c("ContactsList", {
         attrs: { contacts: _vm.contacts },
         on: { selected: _vm.startConversationWith }
+      }),
+      _vm._v(" "),
+      _c("Conversation", {
+        attrs: { contact: _vm.selectedContact, messages: _vm.messages },
+        on: { new: _vm.saveNewMessage }
       })
     ],
     1
@@ -57632,8 +57638,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\work\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! E:\work\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
+__webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
 
 
 /***/ })

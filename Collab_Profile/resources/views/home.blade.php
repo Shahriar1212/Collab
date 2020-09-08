@@ -1,14 +1,21 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">We Code Messenger</div>
+<style>
+    /* .row{
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+    } */
+</style>
 
-                <div class="card-body" id="app">
-                    <chat-app :user="{{ auth()->user() }}"></chat-app>
+@section('content')
+<div class="">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="" id="app">
+                        <chat-app :user="{{ auth()->user() }}"></chat-app>
+                    </div>
                 </div>
             </div>
         </div>

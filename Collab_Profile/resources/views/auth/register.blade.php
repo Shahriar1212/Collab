@@ -67,9 +67,8 @@
                     </div>
                     <div class="form-group">
                         <label for="InputPasswordConfirm">Confirm Password</label>
-                        <div class="col-md-6">
-                            <input id="InputPasswordConfirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                        </div>
+                        <input id="InputPasswordConfirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        
                     </div>
                     <button type="submit" class="registerFormContainer__block__holdBlock--submit">
                         {{ __('Register') }}

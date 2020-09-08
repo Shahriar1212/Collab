@@ -49,6 +49,7 @@ $done--choosing-interest-btn: #37515b;
       border: 1px solid $button-bacground-teacher;
       transition: all 0.3s ease;
       color: $button-bacground-teacher-hover;
+      display: inline-block;
     }
     &--registerTeacher:hover {
       background: $button-bacground-teacher-hover !important;
@@ -57,6 +58,7 @@ $done--choosing-interest-btn: #37515b;
       background: $button-bacground-student !important;
       border: 1px solid $button-bacground-teacher;
       transition: all 0.3s ease;
+      display: inline-block;
     }
     &--registerStudent:hover {
       color: $button-bacground-student;
