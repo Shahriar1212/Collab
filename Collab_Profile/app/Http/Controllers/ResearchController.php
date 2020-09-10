@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ResearchController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function addResearch()
     {
         return View('profile.addResearch');

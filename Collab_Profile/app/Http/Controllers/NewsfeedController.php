@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class NewsfeedController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $posts = \App\Newsfeed::orderBy('created_at', 'DESC')->get();
         return View("newsfeed.index", compact("posts"));
