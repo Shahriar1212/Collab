@@ -13,14 +13,14 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     if(Auth::check()){
-        return view('home');
+        return redirect()->route("newsfeed.index");
     }
     return view('welcome');
 })->name('signup');
 
 Route::get('/login/home', function(){
     if(Auth::check()){
-        return view('home');
+        return redirect()->route("newsfeed.index");
     }
     return view('login');
 })->name('login_home');
@@ -48,7 +48,7 @@ Route::post('/signup', function(Request $request){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/message', 'HomeController@index')->name('home');
 
 
 
