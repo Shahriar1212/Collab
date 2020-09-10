@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class InterestController extends Controller
 {
@@ -32,5 +33,16 @@ class InterestController extends Controller
             }
         }
         return redirect()->route('profile.index', ['user' => $user->name]);
+    }
+
+    public function get($id){
+        $user = Auth()->user()->id;
+        if($user == $id){
+            $interests = DB::table("interests")->where("user_id", $id)->get("interest");
+            $data = array($interests);
+            return json_encode($data);
+        }
+        $error = array("error" => "404");
+        return json_encode($error);
     }
 }
