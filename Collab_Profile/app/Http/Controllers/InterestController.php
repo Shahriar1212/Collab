@@ -36,6 +36,7 @@ class InterestController extends Controller
     }
 
     public function get($id){
+        
         $user = Auth()->user()->id;
         if($user == $id){
             $interests = DB::table("interests")->where("user_id", $id)->get("interest");
