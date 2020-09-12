@@ -13,7 +13,26 @@ class NewsfeedController extends Controller
     }
     
     public function index(){
-        $posts = \App\Newsfeed::orderBy('created_at', 'DESC')->get();
+        $user_id = Auth()->user()->id;
+        $interests = DB::table("interests")->where("user_id", $user_id)->get("interest");
+        $related_users = array();
+        
+        foreach($interests as $interest){
+            $users = DB::table("interests")->where("interest", $interest->interest)->get("user_id");
+            //dd($users);
+            array_push($related_users, $users[0]->user_id);
+        }
+        $releted_users = array_unique($related_users);
+        $posts = array();
+        foreach($releted_users as $user){
+            $post = DB::table("newsfeeds")->where("user_id", $user)->orderBy("created_at", "DESC")->first();
+            if(!is_null($post)){
+                array_push($posts, $post);
+            }
+        }
+        //dd($posts);
+        //$posts = \App\Newsfeed::orderBy('created_at', 'DESC')->get();
+        //dd($posts);
         return View("newsfeed.index", compact("posts"));
     }
 
