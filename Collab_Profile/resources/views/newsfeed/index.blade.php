@@ -108,7 +108,7 @@ aria-hidden="true">
                     
                 </div>
 
-                @comments(['model' => $item])
+                {{-- @comments(['model' => $item]) --}}
                 <!-- comment starts -->
                 <!-- <div class="post_comments">
 

@@ -22,16 +22,20 @@ class NewsfeedController extends Controller
             //dd($users);
             array_push($related_users, $users[0]->user_id);
         }
+        //dd($related_users);
         $releted_users = array_unique($related_users);
-        $posts = array();
-        foreach($releted_users as $user){
-            $post = DB::table("newsfeeds")->where("user_id", $user)->orderBy("created_at", "DESC")->first();
-            if(!is_null($post)){
-                array_push($posts, $post);
-            }
-        }
+        //dd($related_users);
+        $posts = DB::table("newsfeeds")->whereIn("user_id", $related_users)->orderBy("created_at", "DESC")->get();
+        // $posts = array();
+        // foreach($releted_users as $user){
+        //     $post = DB::table("newsfeeds")->where("user_id", $user)->orderBy("created_at", "DESC")->first();
+        //     if(!is_null($post)){
+        //         array_push($posts, $post);
+        //     }
+        // }
         //dd($posts);
         //$posts = \App\Newsfeed::orderBy('created_at', 'DESC')->get();
+        //dd($posts);
         //dd($posts);
         return View("newsfeed.index", compact("posts"));
     }
