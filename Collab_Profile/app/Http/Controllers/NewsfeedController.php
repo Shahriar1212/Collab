@@ -25,7 +25,9 @@ class NewsfeedController extends Controller
         //dd($related_users);
         $releted_users = array_unique($related_users);
         //dd($related_users);
-        $posts = DB::table("newsfeeds")->whereIn("user_id", $related_users)->orderBy("created_at", "DESC")->get();
+        $posts = \App\NewsFeed::whereIn("user_id", $related_users)->orderBy("created_at", "DESC")->get();
+        //$posts = $posts::orderBy("created_at", "DESC")->get();
+        //$posts = DB::table("newsfeeds")->whereIn("user_id", $related_users)->orderBy("created_at", "DESC")->get();
         // $posts = array();
         // foreach($releted_users as $user){
         //     $post = DB::table("newsfeeds")->where("user_id", $user)->orderBy("created_at", "DESC")->first();
