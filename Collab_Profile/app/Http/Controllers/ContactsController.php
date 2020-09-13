@@ -6,13 +6,34 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Message;
 use App\Events\NewMessage;
+use Illuminate\Support\Facades\DB;
 
 class ContactsController extends Controller
 {
     public function get()
     {
         // get all users except the authenticated one
-        $contacts = User::where('id', '!=', auth()->id())->get();
+        // $contacts = User::where('id', '!=', auth()->id())->get();
+        // dd($contacts);
+
+
+        ///////////////////////////////////////////
+
+        $user_id = Auth()->user()->id;
+        $interests = DB::table("interests")->where("user_id", $user_id)->get("interest");
+        $related_users = array();
+        
+        foreach($interests as $interest){
+            $users = DB::table("interests")->where("interest", $interest->interest)->get("user_id");
+            array_push($related_users, $users[0]->user_id);
+        }
+        $releted_users = array_unique($related_users);
+
+        $contacts = User::whereIn("id", $related_users)
+            ->where('id', '!=', auth()->id())
+            ->get();
+
+        ////////////////////////////////////////////////////
 
         // get a collection of items where sender_id is the user who sent us a message
         // and messages_count is the number of unread messages we have from him
@@ -28,10 +49,12 @@ class ContactsController extends Controller
 
             $contact->unread = $contactUnread ? $contactUnread->messages_count : 0;
 
+
             return $contact;
+            // return view('/message');
         });
 
-
+        // dd($contacts);
         return response()->json($contacts);
     }
 
