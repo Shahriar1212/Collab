@@ -31,8 +31,32 @@
                     @else
                         <img src="/images/profile-profile-img.jpg" alt="">
                     @endif
+                    <button type="button" class="btn btn-outline-dark float-right mt-3" data-toggle="modal" data-target="#msgModal">
+                        Message
+                    </button>
 
-
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Write Message</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-dark">Send Message</button>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
                 <div class="containIntroInfo__info">
                     <a href="/profile/{{Auth::user()->name}}/edit"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
