@@ -57638,8 +57638,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
+__webpack_require__(/*! D:\repositories\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! D:\repositories\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
 
 
 /***/ })
