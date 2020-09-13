@@ -51,7 +51,7 @@
 
 <style lang="scss" scoped>
 .contacts-list {
-    flex: 2;
+    flex: 5;
     max-height: 100%;
     height: 600px;
     overflow: scroll;

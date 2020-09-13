@@ -72,9 +72,8 @@
 
                 &.sent {
                     text-align: left;
-
                     .text {
-                        background: #81c4f9;
+                        background:blue;
                     }
                 }
             }
