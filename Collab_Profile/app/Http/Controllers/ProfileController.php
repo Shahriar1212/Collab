@@ -18,7 +18,7 @@ class ProfileController extends Controller
         $research = \App\Research::where('user_id', $id)->get();
         $project = \App\Project::where('user_id', $id)->get();
         $interest = \App\Interest::where('user_id', $id)->get();
-        $user = \App\User::where("id", $id)->get();
+        $user = \App\User::where("id", $id)->get()[0];
         return View('profile.index', compact('user', 'research', 'project', 'interest'));
     }
 
@@ -29,16 +29,8 @@ class ProfileController extends Controller
     
     public function edit($id)
     {
-        dd($id);
-        return View('/profile/edit');
-    }
-
-    public function saveEdit(Request $request)
-    {
-
-        $user = new \App\User();
-        $user->about = request('about');
-        $user->save();
+        $user = \app\User::where("id", $id)->get()[0];
+        return View('/profile/edit', compact("user"));
     }
 
     public function updateInfo(\App\User $user)
@@ -79,7 +71,7 @@ class ProfileController extends Controller
 
         session()->flash('success', 'Profile Updated Successfully');
 
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 
     public function updateAbout(\App\User $user)
@@ -90,7 +82,7 @@ class ProfileController extends Controller
 
 
         $user->update($data);
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
         
     }
 }
