@@ -27,8 +27,9 @@ class ProfileController extends Controller
         return View('profile.editAbout');
     }
     
-    public function edit()
+    public function edit($id)
     {
+        dd($id);
         return View('/profile/edit');
     }
 

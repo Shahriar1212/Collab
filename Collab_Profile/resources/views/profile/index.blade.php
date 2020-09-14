@@ -64,7 +64,9 @@
                     </div>
                 </div>
                 <div class="containIntroInfo__info">
-                    <a href="/profile/{{$user->name}}/edit"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
+                    @if($user->id == Auth::user()->id)
+                        <a href="/profile/{{$user->id}}/edit"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
+                    @endif
                     <h4 class="containIntroInfo__info__name">{{ $user->name }}</h4>
                     <p class="containIntroInfo__info__designation">{{ $user->designation }}</p>
                     <p class="containIntroInfo__info__institution">{{ $user->institution_name }}</p>
@@ -72,13 +74,16 @@
                 </div>
             </div>
             <div class="about">
-                
+                @if($user->id == Auth::user()->id)
                 <a href="/profile/{{$user->name}}/edit/about"><i class="fas fa-edit float-right about__edit"></i></a>
+                @endif
                 <h4>About</h4>
                 <p>{{ $user->about }}</p>
             </div>
             <div class="research">
+                @if($user->id == Auth::user()->id)
                 <a href="/profile/{{$user->name}}/add/research" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
+                @endif
 
                 <h4>Research</h4>
                              
@@ -176,7 +181,9 @@
                 <hr> --}}
             </div>
             <div class="projects">
+                @if($user->id == Auth::user()->id)
                 <a href="/profile/{{$user->name}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
+                @endif
                 <h4>Projects</h4>
 
 

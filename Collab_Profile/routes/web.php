@@ -57,7 +57,7 @@ Route::get('/message', 'HomeController@index')->name('home');
 
 // Profile Controller Routes
 Route::get('/profile/{id}', 'ProfileController@index')->name('profile.index');
-Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/edit/{user}', 'ProfileController@updateInfo');
 Route::get('/profile/{user}/edit/about', 'ProfileController@editAbout')->name('profile.edit.about');
 Route::patch('/profile/edit/about/{user}', 'ProfileController@updateAbout');
