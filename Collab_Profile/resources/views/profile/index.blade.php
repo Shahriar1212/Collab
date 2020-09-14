@@ -252,7 +252,10 @@
         </div>
         <div class="col-sm-4">
             <div class="profileInterests">
+                @if($user->id == Auth::user()->id)
                 <a href="/interest"><i class="fas fa-edit float-right profileInterests__edit"></i></a>
+                @endif
+                
                 <h3>Interests</h3>
                 <div class="profileInterests__containLists">
                     <ul class="profileInterests__containLists__lists">
