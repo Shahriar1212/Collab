@@ -88,7 +88,7 @@
                 using this forelse loop every research if being fetched from database
                 and displaying it to view --}}
                 @forelse ($research as $item)
-                    <div class="row no-gutters research__each mt-3" onclick="location.href='research-project-template-me.html';">
+                    <div class="row no-gutters research__each mt-3" onclick="location.href='/profile/{{$user->name}}/research/{{$item->id}}';">
                         <div class="col-lg-3 research__each__img">
                             {{-- <img src="/images/research-img.jpg" alt=""> --}}
                             @if ($item->thumbnail_image)
@@ -185,7 +185,7 @@
 
 
                 @forelse ($project as $item)
-                    <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
+                    <div class="row no-gutters projects__each mt-3" onclick="location.href='/profile/{{$user->name}}/project/{{$item->id}}';">
                         <div class="col-lg-3 projects__each__img">
 
                             @if ($item->thumbnail_image)
