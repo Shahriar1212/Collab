@@ -9,6 +9,10 @@
     </div>
 @endif
 
+@php
+    $user = $user[0];
+@endphp
+
 <div class="container portfolioContainer mt-5 mb-5">
     <div class="row">
         <div class="col-sm-8">
