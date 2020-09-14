@@ -13,13 +13,12 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($id)
     {
-
-        $research = \App\Research::where('user_id', Auth()->user()->id)->get();
-        $project = \App\Project::where('user_id', Auth()->user()->id)->get();
-        $interest = \App\Interest::where('user_id', Auth()->user()->id)->get();
-        $user = new \App\User();
+        $research = \App\Research::where('user_id', $id)->get();
+        $project = \App\Project::where('user_id', $id)->get();
+        $interest = \App\Interest::where('user_id', $id)->get();
+        $user = \App\User::where("id", $id)->get();
         return View('profile.index', compact('user', 'research', 'project', 'interest'));
     }
 

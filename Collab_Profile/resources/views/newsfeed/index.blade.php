@@ -80,7 +80,8 @@ aria-hidden="true">
 
             @php
                 $path = DB::table('newsfeeds')->select('users.profile_image')->join('users', 'newsfeeds.user_id', 'users.id')->where("users.id", $item->user_id)->get()[0]->profile_image;
-                $name = DB::table('newsfeeds')->select('users.name')->join('users', 'newsfeeds.user_id', 'users.id')->where("users.id", $item->user_id)->get()[0]->name;
+                $user_data = DB::table('newsfeeds')->select('users.name')->join('users', 'newsfeeds.user_id', 'users.id')->where("users.id", $item->user_id)->get();
+                $user_name = $user_data[0]->name;
             @endphp
 
             <br>
@@ -91,7 +92,7 @@ aria-hidden="true">
                         <img src="{{ asset('storage/' . $path) }}" alt="">
                     </div>
                     <div class="col-10 col-lg-11 autho_description pl-4">
-                        <p class="autho_name">{{ $name }}</p>
+                        <p class="autho_name"><a href="/profile/{{ $item->user_id }}">{{ $user_name }}</a></p>
                         {{-- <p class="post_time">{{$item->created_at}}</p> --}}
                         <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('d-m-yy') }}</p>
                     </div>

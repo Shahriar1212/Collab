@@ -56,7 +56,7 @@ Route::get('/message', 'HomeController@index')->name('home');
 
 
 // Profile Controller Routes
-Route::get('/profile/{user}', 'ProfileController@index')->name('profile.index');
+Route::get('/profile/{id}', 'ProfileController@index')->name('profile.index');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/edit/{user}', 'ProfileController@updateInfo');
 Route::get('/profile/{user}/edit/about', 'ProfileController@editAbout')->name('profile.edit.about');
@@ -98,5 +98,6 @@ Route::post("/{user}/post", "NewsfeedController@post")->name('save_status');
 
 /// chat
 Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/start', 'InitiateMessage@sendMessage');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');

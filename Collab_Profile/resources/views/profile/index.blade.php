@@ -17,8 +17,8 @@
                 <div class="containIntroInfo__coverImg">
                     {{-- <img src="/images/profile-cover-img.jpg" alt=""> --}}
 
-                    @if (Auth::user()->cover_image)
-                        <img src=" {{ asset('storage/' . Auth::user()->cover_image) }}" alt="">
+                    @if ($user->cover_image)
+                        <img src=" {{ asset('storage/' . $user->cover_image) }}" alt="">
                     @else
                         <img src="/images/profile-cover-img.jpg" alt="">
                     @endif
@@ -26,8 +26,8 @@
                 </div>
                 <div class="containIntroInfo__profileImg">
 
-                    @if (Auth::user()->profile_image)
-                        <img src=" {{ asset('storage/' . Auth::user()->profile_image) }}" alt="">
+                    @if ($user->profile_image)
+                        <img src=" {{ asset('storage/' . $user->profile_image) }}" alt="">
                     @else
                         <img src="/images/profile-profile-img.jpg" alt="">
                     @endif
@@ -47,7 +47,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form method="POST" action="/conversation/start">
+                                    @csrf
                                     <div class="form-group">
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                                     </div>
@@ -59,21 +60,21 @@
                     </div>
                 </div>
                 <div class="containIntroInfo__info">
-                    <a href="/profile/{{Auth::user()->name}}/edit"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
-                    <h4 class="containIntroInfo__info__name">{{ Auth::user()->name }}</h4>
-                    <p class="containIntroInfo__info__designation">{{ Auth::user()->designation }}</p>
-                    <p class="containIntroInfo__info__institution">{{ Auth::user()->institution_name }}</p>
-                    <p class="containIntroInfo__info__country">{{ Auth::user()->country}}</p>
+                    <a href="/profile/{{$user->name}}/edit"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
+                    <h4 class="containIntroInfo__info__name">{{ $user->name }}</h4>
+                    <p class="containIntroInfo__info__designation">{{ $user->designation }}</p>
+                    <p class="containIntroInfo__info__institution">{{ $user->institution_name }}</p>
+                    <p class="containIntroInfo__info__country">{{ $user->country}}</p>
                 </div>
             </div>
             <div class="about">
                 
-                <a href="/profile/{{Auth::user()->name}}/edit/about"><i class="fas fa-edit float-right about__edit"></i></a>
+                <a href="/profile/{{$user->name}}/edit/about"><i class="fas fa-edit float-right about__edit"></i></a>
                 <h4>About</h4>
-                <p>{{ Auth::user()->about }}</p>
+                <p>{{ $user->about }}</p>
             </div>
             <div class="research">
-                <a href="/profile/{{Auth::user()->name}}/add/research" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
+                <a href="/profile/{{$user->name}}/add/research" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
 
                 <h4>Research</h4>
                              
@@ -98,7 +99,7 @@
                             </h5>
                             <p>
                                 <!-- limit:40 words -->
-                            {{ str_limit($item->description, 300, '...') }} <a href="/profile/{{Auth::user()->name}}/research/{{$item->id}}">more</a> </p>
+                            {{ str_limit($item->description, 300, '...') }} <a href="/profile/{{$user->name}}/research/{{$item->id}}">more</a> </p>
                         </div>
                     </div>
                     <hr>
@@ -171,7 +172,7 @@
                 <hr> --}}
             </div>
             <div class="projects">
-                <a href="/profile/{{Auth::user()->name}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
+                <a href="/profile/{{$user->name}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
                 <h4>Projects</h4>
 
 
@@ -194,7 +195,7 @@
                             </h5>
                             <p>
                                 <!-- limit:40 words -->
-                                {{ str_limit($item->excerpt, 300, '...') }} <a href="/profile/{{Auth::user()->name}}/project/{{$item->id}}">more</a> </p>
+                                {{ str_limit($item->excerpt, 300, '...') }} <a href="/profile/{{$user->name}}/project/{{$item->id}}">more</a> </p>
                         </div>
                     </div>
                     <hr>
