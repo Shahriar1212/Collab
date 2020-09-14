@@ -98,6 +98,6 @@ Route::post("/{user}/post", "NewsfeedController@post")->name('save_status');
 
 /// chat
 Route::get('/contacts', 'ContactsController@get');
-Route::get('/conversation/start', 'InitiateMessage@sendMessage');
+Route::post('/conversation/start', 'InitiateMessage@sendMessage')->name('initiate.send');;
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');

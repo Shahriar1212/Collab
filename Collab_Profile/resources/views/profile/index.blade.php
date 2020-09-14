@@ -8,6 +8,10 @@
         {{ session()->get('success') }}
     </div>
 @endif
+@php
+    $send_to = $user->id;    
+@endphp
+
 
 <div class="container portfolioContainer mt-5 mb-5">
     <div class="row">
@@ -31,9 +35,11 @@
                     @else
                         <img src="/images/profile-profile-img.jpg" alt="">
                     @endif
-                    <button type="button" class="btn btn-outline-dark float-right mt-3" data-toggle="modal" data-target="#msgModal">
-                        Message
-                    </button>
+                    
+
+                    @if($user->id != Auth::user()->id)
+                        <button type="button" class="btn btn-outline-dark float-right mt-3" data-toggle="modal" data-target="#msgModal">Message</button>
+                    @endif
 
                 </div>
                 <!-- Modal -->
@@ -50,7 +56,8 @@
                                 <form method="POST" action="/conversation/start">
                                     @csrf
                                     <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                        <textarea class="form-control" id="-text" placeholder="Enter your status" name="text"></textarea>
+                                        <input type="hidden" name="to" value="{{$send_to}}"> 
                                     </div>
                                     <button type="submit" class="btn btn-outline-dark">Send Message</button>
                                 </form>
