@@ -54,7 +54,7 @@ class ProjectController extends Controller
 
         $project->save($data);
         session()->flash('success', 'Project Added Successfully');
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 
     public function readProject($user, $id)
@@ -105,7 +105,7 @@ class ProjectController extends Controller
 
         $project[0]->update($data);
         session()->flash('success', 'Project Updated Successfully');
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('profile.index', ['user' => Auth()->user()->id]);
     }
 
     public function deleteProject($user_name,$id)
@@ -113,6 +113,6 @@ class ProjectController extends Controller
         $project = \App\Project::find($id);
         $project->delete();
         session()->flash('success', 'Project Deleted Successfully');
-        return redirect()->route('profile.index', ['user' => $user_name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->name]);
     }
 }

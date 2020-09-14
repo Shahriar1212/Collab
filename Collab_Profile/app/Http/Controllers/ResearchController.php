@@ -53,7 +53,7 @@ class ResearchController extends Controller
 
         session()->flash('success', 'Research Added Successfully');
 
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 
     public function readResearch($user, $id)
@@ -67,6 +67,6 @@ class ResearchController extends Controller
         $research = \App\Research::find($id);
         $research->delete();
         session()->flash('success', 'Research Deleted Successfully');
-        return redirect()->route('profile.index', ['user' => $user_name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 }
