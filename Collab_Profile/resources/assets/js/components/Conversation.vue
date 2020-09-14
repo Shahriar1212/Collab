@@ -1,6 +1,6 @@
 <template>
     <div class="conversation">
-        <h1>{{ contact ? contact.name : 'Select a Contact' }}</h1>
+        <h1 class="conversationHead">{{ contact ? contact.name : 'Select a Contact' }}</h1>
         <MessagesFeed :contact="contact" :messages="messages"/>
         <MessageComposer @send="sendMessage"/>
     </div>
@@ -39,6 +39,10 @@
 </script>
 
 <style lang="scss" scoped>
+.conversationHead{
+    font-family:sans-serif;
+    font-weight: bold;
+}
 .conversation {
     flex: 5;
     display: flex;

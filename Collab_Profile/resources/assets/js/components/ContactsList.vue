@@ -16,16 +16,16 @@
 </template>
 
 <script>
-    // $( document ).ready(function() {
-    //     $(".contacts-list").css("height", $(window).height());
-    // });
-    
 
+    
     export default {
         props: {
             contacts: {
                 type: Array,
                 default: []
+            },
+            selectedMobile:{
+                type: String
             }
         },
         data() {
@@ -38,6 +38,15 @@
                 this.selected = contact;
 
                 this.$emit('selected', contact);
+            }
+        },
+        mounted() {
+            // tablet 
+            var getWidth = $(window).width();
+            console.log(getWidth);
+            if(getWidth <= 1024){
+                console.log("Hi");
+                $(".contacts-list").css("flex","3");
             }
         },
         computed: {
@@ -61,27 +70,36 @@
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
+$tab_break: 1023px;
+$mobile_break: 768px;
+
 .contacts-list {
     flex: 2;
     max-height: 100%;
     height: 100%;
     overflow: scroll;
-    border-left: 1px solid #a6a6a6;
+    // border-left: 1px solid #a6a6a6;
     
     ul {
         list-style-type: none;
         padding-left: 0;
+        
 
         li {
             display: flex;
             padding: 2px;
             // border-bottom: 1px solid #aaaaaa;
-            height: 60px;
+            height: 70px;
+            background: #dfdfdf;
+            margin-right: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
             position: relative;
             cursor: pointer;
 
             &.selected {
-                background: #dfdfdf;
+                background: #bde6cd;
             }
 
             span.unread {
@@ -107,8 +125,9 @@
                 align-items: center;
 
                 img {
-                    width: 35px;
-                    height: 35px;
+                    width: 55px;
+                    height: 55px;
+                    border: 2px solid grey;
                     border-radius: 50%;
                     object-fit: cover;
                     margin: 0 auto;
@@ -128,11 +147,26 @@
 
                     &.name {
                         font-weight: bold;
-                        font-size: 15px;
+                        font-size: 18px;
                     }
+                    
                 }
             }
         }
     }
 }
+@media screen and (max-width: $tab_break) {
+    .contact{
+        padding-left: 10px;
+    }
+    .name{
+        font-size: 16px !important;
+    }
+}
+@media screen and (max-width: 767px){
+    .contacts-list {
+        height: 50% !important;
+    }
+}
+
 </style>

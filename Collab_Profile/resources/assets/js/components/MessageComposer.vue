@@ -31,9 +31,12 @@
     width: 96%;
     margin: 10px;
     resize: none;
-    border-radius: 3px;
+    border-radius: 10px;
     border: 1px solid black;
     padding: 6px;
+}
+textarea:focus{
+    outline: none;
 }
 </style>
 

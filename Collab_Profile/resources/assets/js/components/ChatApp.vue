@@ -7,11 +7,14 @@
 
 <script>
     $( document ).ready(function() {
-        $(".chat-app").css("height", $(window).height()-73);
+        $(".chat-app").css("height", $(window).height()-93);
     });
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';
-
+    var selectedMobile = "";
+    $(".contact").click(function(){
+        selectedMobile = $(this).val();
+    });
     export default {
         props: {
             user: {
@@ -80,6 +83,16 @@
 
 <style lang="scss" scoped>
 .chat-app {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
     display: flex;
+}
+@media screen and (max-width: 767px) {
+    .chat-app{
+        display: block;
+        border: none;
+    }
 }
 </style>

@@ -8,17 +8,13 @@
 </style>
 
 @section('content')
-<div class="">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="">
-                    <div class="" id="app">
-                        <chat-app :user="{{ auth()->user() }}"></chat-app>
-                    </div>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="" id="app">
+                <chat-app :user="{{ auth()->user() }}"></chat-app>
             </div>
-        </div>
+        </div>  
     </div>
 </div>
 @endsection

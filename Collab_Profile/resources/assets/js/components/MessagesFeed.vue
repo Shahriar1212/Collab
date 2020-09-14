@@ -21,6 +21,13 @@
                 required: true
             }
         },
+        mounted() {
+            // tablet 
+            var getWidth = $(window).width();
+            if(getWidth <= 1024){
+                $(".feed").css("max-height","1094px");
+            }
+        },
         methods: {
             scrollToBottom() {
                 setTimeout(() => {
@@ -47,7 +54,8 @@
 .feed {
     background: #F8F9FA;
     height: 100%;
-    max-height: 470px;
+    border-radius: 10px;
+    max-height: 570px;
     overflow: scroll;
 
     ul {
@@ -91,5 +99,6 @@
         }
     }
 }
+
 </style>
 
