@@ -19,7 +19,9 @@ class NewsfeedController extends Controller
         
         foreach($interests as $interest){
             $users = DB::table("interests")->where("interest", $interest->interest)->get("user_id");
-            array_push($related_users, $users[0]->user_id);
+            foreach($users as $user){
+                array_push($related_users, $user->user_id);
+            }
         }
         $releted_users = array_unique($related_users);
         $posts = \App\NewsFeed::whereIn("user_id", $related_users)->orderBy("created_at", "DESC")->get();
