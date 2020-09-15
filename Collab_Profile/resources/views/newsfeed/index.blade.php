@@ -88,8 +88,12 @@ aria-hidden="true">
             <div class="post_box">
                 <div class="post_author row">
                     <div class="col-2 col-lg-1 autho_img">
-                        {{-- <img src="images/profile-profile-img.jpg" alt=""> --}}
+                        @if (isset($path))
                         <img src="{{ asset('storage/' . $path) }}" alt="">
+                        @else
+                            <img src="/images/unisex-avatar.png" alt="">
+                        @endif
+                        {{-- <img src="{{ asset('storage/' . $path) }}" alt=""> --}}
                     </div>
                     <div class="col-10 col-lg-11 autho_description pl-4">
                         <p class="autho_name"><a href="/profile/{{ $item->user_id }}">{{ $user_name }}</a></p>

@@ -33,7 +33,7 @@
                     @if ($user->profile_image)
                         <img src=" {{ asset('storage/' . $user->profile_image) }}" alt="">
                     @else
-                        <img src="/images/profile-profile-img.jpg" alt="">
+                        <img src="/images/unisex-avatar.png" alt="">
                     @endif
                     
 
