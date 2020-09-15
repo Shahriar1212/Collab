@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse navbar__menu" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link navbar__menu--login" href="{{route('signup')}}">sign up</a>
+                        <a class="nav-link navbar__menu--login" href="{{route('signup')}}">Sign up</a>
                     </li>
                 </ul>
             </div>

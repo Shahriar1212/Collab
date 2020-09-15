@@ -27,7 +27,7 @@
                 <div>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link navbar__menu--login" href="{{route('login_home')}}">Log in</a>
+                            <a class="nav-link navbar__menu--login" href="{{route('login_home')}}">Login</a>
                         </li>
                     </ul>
                 </div>
