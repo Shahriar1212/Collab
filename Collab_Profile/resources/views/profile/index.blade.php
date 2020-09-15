@@ -15,7 +15,7 @@
 
 <div class="container portfolioContainer mt-5 mb-5">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 wrapperProfile">
             <!-- intro - information -->
             <div class="containIntroInfo">
                 <div class="containIntroInfo__coverImg">
@@ -96,15 +96,15 @@
                 and displaying it to view --}}
                 @forelse ($research as $item)
                     <div class="row no-gutters research__each mt-3" onclick="location.href='/profile/{{$user->name}}/research/{{$item->id}}';">
-                        <div class="col-lg-3 research__each__img">
+                        <!-- <div class="col-lg-3 research__each__img">
                             {{-- <img src="/images/research-img.jpg" alt=""> --}}
                             @if ($item->thumbnail_image)
                                 <img src=" {{ asset('storage/' . $item->thumbnail_image) }}" alt="">
                             @else
                                 <img src="/images/research-img.jpg" alt="">
                             @endif
-                        </div>
-                        <div class="col-lg-9 research__each__info">
+                        </div> -->
+                        <div class="col-lg-12 research__each__info mt-4">
                             <h5>
                                 <!-- limit: 8 words -->
                                 {{ $item->title }}

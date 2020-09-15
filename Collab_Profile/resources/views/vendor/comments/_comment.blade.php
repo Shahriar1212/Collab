@@ -1,20 +1,31 @@
 @inject('markdown', 'Parsedown')
+@php
+    $path = DB::table('comments')->select('users.profile_image')->join('users', 'comments.commenter_id', 'users.id')->where("users.id", $comment->commenter_id)->get();
+    $path = $path[0]->profile_image
+@endphp
 @php($markdown->setSafeMode(true))
 
+
 @if(isset($reply) && $reply === true)
-  <div id="comment-{{ $comment->getKey() }}" class="media">
+  <div style="padding-left: 15px" id="comment-{{ $comment->getKey() }}" class="media">
 @else
-  <li id="comment-{{ $comment->getKey() }}" class="media">
+  <li id="comment-{{ $comment->getKey() }}" class="media oneComment">
 @endif
-    
-    <img class="mr-3 CommentImg" src="" alt="">
+
+    <!-- <img class="mr-3 CommentImg" src="" alt=""> -->
+    <!-- <img class="mr-3 CommentImg" src="{{ asset('storage/' . $path) }}" alt=""> -->
+    @if (isset($path))
+        <img class="mr-3 CommentImg" src="{{ asset('storage/' . $path) }}" alt="">
+    @else
+        <img class="mr-3 CommentImg"  src="/images/unisex-avatar.png" alt="">
+    @endif
     <div class="media-body mt-1">
         <h5 class="mt-0 mb-1 commentAuthor">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
         <div class="commentContent" style="white-space: pre-wrap;">{!! $markdown->line($comment->comment) !!}</div>
 
         <div>
             @can('reply-to-comment', $comment)
-                <button data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Reply</button>
+                <button style="padding-left: 0rem; text-decoration: none" data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase replyButton">Reply</button>
             @endcan
             @can('edit-comment', $comment)
                 <!-- <button data-toggle="modal" data-target="#comment-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Edit</button> -->
@@ -72,9 +83,8 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Srite something:</label>
+                                    <label for="message">Write a reply:</label>
                                     <textarea required class="form-control" name="message" rows="1"></textarea>
-                                    <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
                             <div class="modal-footer">

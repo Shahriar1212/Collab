@@ -18,8 +18,8 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <form class="status_input">
-            <div class="form-group">
+        <form style="border-radius: 10px !important;" class="status_input">
+            <div style="margin-bottom:0px;" class="form-group">
                 <input type="text" class="form-control" id="statusInput" aria-describedby="statusInputHelp"
                 data-toggle="modal" data-target="#modal_status" placeholder="What's on your mind?">
             </div>
@@ -101,18 +101,19 @@ aria-hidden="true">
                         <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('d-m-yy') }}</p>
                     </div>
                 </div>
-                <div class="post_body pt-4">
-                    <p>
-                        {{$item->status}}
-                    </p>
-                </div>
-                <div class="post_img pt-2 mb-4">
-                    @if ($item->image != NULL)
-                        <img src="{{ asset('storage/' . $item->image) }}" alt="">
-                    @endif
-                    
-                </div>
+                <div class="uploadedStatus">
+                    <div class="post_body p-2">
+                        <p>
+                            {{$item->status}}
+                        </p>
+                    </div>
+                    <div class="post_img">
+                        @if ($item->image != NULL)
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                        @endif
+                    </div>
 
+                </div>
                 @comments(['model' => $item])
                 <!-- comment starts -->
                 <!-- <div class="post_comments">

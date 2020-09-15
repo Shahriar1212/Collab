@@ -28,7 +28,7 @@
                         <h2>Choose your field of interests</h2>
                     </div>
                     <div class="col-sm-4">
-                        <a class="btn btn-outline-dark float-right send_my_interest" role="button" href="/newsfeed">Save</a>
+                        <a class="btn btn-outline-dark send_my_interest" role="button" href="/newsfeed">Save</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 <div class="card newInterestCard" style="width: 100%;">
                     <img class="card-img-top shadow" src="images/ee2.jpg" alt="Card image cap">
                     <div class="card-img-overlay text-white">
-                        <h3 class="pt-4 pl-0 ml-0">Electrical Engineering</h3>
+                        <h3 class="pt-4 pl-0 ml-0">Electrical and Electronic Engineering</h3>
                     </div>
                 </div>
             </div>
@@ -79,17 +79,16 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <ul class="newInterestChildWrappers">
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Computer Vision</li>
-                    <li>Image Processing</li>
-                    <li>Neural Engine</li>
-                    <li>Generative Adverserial Network</li>
-                    <li>Recurrent Neural Network</li>
-                    <li>Pose Detection</li>
-                    <li>Shape Analysis</li>
-                    <li>3D Image Reconstruction</li>
-                    <li>Medical Image Analysis</li>
+                    <li>Bio battery</li>
+                    <li>Beamed power transmission</li>
+                    <li>clean electicity</li>
+                    <li>5g</li>
+                    <li>Motors</li>
+                    <li>automation</li>
+                    <li>LED</li>
+                    <li>Green power storage</li>
+                    <li>Nano fuel cell</li>
+                    <li>Condenser bushing</li>
                 </ul>
             </div>
         </div>
@@ -101,7 +100,7 @@
                 <div class="card newInterestCard" style="width: 100%;">
                     <img class="card-img-top shadow" src="images/ee.jpg" alt="Card image cap">
                     <div class="card-img-overlay text-white">
-                        <h3 class="pt-4 pl-0 ml-0">Computer Engineering</h3>
+                        <h3 class="pt-4 pl-0 ml-0">Literature</h3>
                     </div>
                 </div>
             </div>
@@ -109,17 +108,12 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <ul class="newInterestChildWrappers">
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Computer Vision</li>
-                    <li>Image Processing</li>
-                    <li>Neural Engine</li>
-                    <li>Generative Adverserial Network</li>
-                    <li>Recurrent Neural Network</li>
-                    <li>Pose Detection</li>
-                    <li>Shape Analysis</li>
-                    <li>3D Image Reconstruction</li>
-                    <li>Medical Image Analysis</li>
+                    <li>Politics</li>
+                    <li>Religion</li>
+                    <li>Historical background</li>
+                    <li>Novels</li>
+                    <li>Critisism</li>
+                    <li>Symbolism</li>
                 </ul>
             </div>
         </div>
@@ -131,7 +125,7 @@
                 <div class="card newInterestCard" style="width: 100%;">
                     <img class="card-img-top shadow" src="images/cs.jpg" alt="Card image cap">
                     <div class="card-img-overlay text-white">
-                        <h3 class="pt-4 pl-0 ml-0">Electrical Engineering</h3>
+                        <h3 class="pt-4 pl-0 ml-0">Mechanical Engineering</h3>
                     </div>
                 </div>
             </div>
@@ -139,17 +133,43 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <ul class="newInterestChildWrappers">
-                    <li>Machine Learning</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Computer Vision</li>
-                    <li>Image Processing</li>
-                    <li>Neural Engine</li>
-                    <li>Generative Adverserial Network</li>
-                    <li>Recurrent Neural Network</li>
-                    <li>Pose Detection</li>
-                    <li>Shape Analysis</li>
-                    <li>3D Image Reconstruction</li>
-                    <li>Medical Image Analysis</li>
+                    <li>Automobile</li>
+                    <li>Cad</li>
+                    <li>Themodynamics</li>
+                    <li>Elasticity</li>
+                    <li>Equilibrium</li>
+                    <li>Heat transfer</li>
+                    <li>Inertia</li>
+                    <li>Fluid dynamics</li>
+                    <li>Compressor</li>
+                    <li>Aerodynamics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card newInterestCard" style="width: 100%;">
+                    <img class="card-img-top shadow" src="images/cs.jpg" alt="Card image cap">
+                    <div class="card-img-overlay text-white">
+                        <h3 class="pt-4 pl-0 ml-0">Architecture Engineering</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <ul class="newInterestChildWrappers">
+                    <li>Design integration</li>
+                    <li>Lightweight architecture</li>
+                    <li>Parametric design</li>
+                    <li>Egyptian pyramids</li>
+                    <li>Design principles</li>
+                    <li>Urban development</li>
+                    <li>Structural safety</li>
+                    <li>Rural development</li>
                 </ul>
             </div>
         </div>
