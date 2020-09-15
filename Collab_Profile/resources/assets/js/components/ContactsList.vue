@@ -3,7 +3,8 @@
         <ul>
             <li v-for="contact in sortedContacts" :key="contact.id" @click="selectContact(contact)" :class="{ 'selected': contact == selected }">
                 <div class="avatar">
-                    <img :src="'storage/' + contact.profile_image" :alt="contact.name">
+                    <img v-if="contact.profile_image !== null" :src="'storage/' + contact.profile_image" :alt="contact.name">
+                    <img v-else-if="contact.profile_image === null" :src="'images/unisex-avatar.png'" :alt="contact.name">
                 </div>
                 <div class="contact">
                     <p class="name">{{ contact.name }}</p>

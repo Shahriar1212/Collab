@@ -2016,6 +2016,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contacts: {
@@ -44764,12 +44765,21 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "avatar" }, [
-              _c("img", {
-                attrs: {
-                  src: "storage/" + contact.profile_image,
-                  alt: contact.name
-                }
-              })
+              contact.profile_image !== null
+                ? _c("img", {
+                    attrs: {
+                      src: "storage/" + contact.profile_image,
+                      alt: contact.name
+                    }
+                  })
+                : contact.profile_image === null
+                ? _c("img", {
+                    attrs: {
+                      src: "images/unisex-avatar.png",
+                      alt: contact.name
+                    }
+                  })
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "contact" }, [
@@ -57660,8 +57670,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\CDS\Documents\GitHub\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
+__webpack_require__(/*! D:\repositories\chat_test\Collab_Profile\resources\assets\js\app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! D:\repositories\chat_test\Collab_Profile\resources\assets\sass\style.scss */"./resources/assets/sass/style.scss");
 
 
 /***/ })
